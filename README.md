@@ -128,7 +128,7 @@ Sometimes you just want a lightweight sovereign bridge across your own devices.
 
 ## License
 
-AGPL-3.0
+MIT
 
 ---
 
