@@ -10,7 +10,8 @@ No accounts. No cloud dependency. No third-party clipboard services.
 
 ## How it works
 
-<img width="1435" height="710" alt="telegrapho_screen" src="https://github.com/user-attachments/assets/063c1b7f-3864-4e8c-99bf-7a9ca7a25a37" />
+<img width="1453" height="714" alt="telegrapho_screen" src="https://github.com/user-attachments/assets/c5dbdaae-9791-42d7-8c25-976c063e5d89" />
+
 
 
 
