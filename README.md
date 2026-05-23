@@ -28,7 +28,7 @@ Create your own private channel and instantly share text across devices using yo
 
 Useful for:
 
-- sending text from mobile → desktop
+- sending text from mobile to desktop and vice versa
 - temporary note sharing
 - transferring snippets across devices
 - sending URLs, commands or code snippets
