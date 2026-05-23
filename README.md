@@ -9,7 +9,7 @@ No accounts. No cloud dependency. No third-party clipboard services.
 **Your text. Your server. Your control.**
 
 
-<img width="1790" height="1402" alt="telegrapho" src="https://github.com/user-attachments/assets/563c2dbe-1964-40a0-8aca-647cb400d68d" />
+<img width="1951" height="1229" alt="telegrapho2" src="https://github.com/user-attachments/assets/c1ca310f-bd8b-4269-a6d1-aa0854682df4" />
 
 
 ---
