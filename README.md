@@ -2,7 +2,7 @@
 
 > Private self-hosted realtime text bridge between your devices.
 
-Copy on mobile. Receive on desktop instantly.
+Write or paste text on one device. Receive it on another instantly.
 
 No accounts. No cloud dependency. No third-party clipboard services.
 
