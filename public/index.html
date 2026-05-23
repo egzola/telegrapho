@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Telegrapho is a private realtime text sharing tool. Create your own channels and share text between your devices without relying on third-party services.">
+    <meta name="application-name" content="Telegrapho">
+    <meta name="author" content="egzola">
+    <meta name="theme-color" content="#0f1115">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Telegrapho</title>
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <img src="logo.png" alt="Telegrapho Logo" class="logo" />
+
+            <div class="title-wrap">
+                <div class="title">Telegrapho</div>
+                <div class="subtitle">Your sovereign text sharing platform</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="channel-wrap">
+                <span class="channel-label">Channel</span>
+                <input id="channelInput" class="channel-input" type="text" placeholder="any secret word"
+                    autocomplete="off">
+            </div>
+
+            <div class="live">
+                <span class="dot"></span>
+                Live Sync
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <div class="hero">
+                <h1>Write or paste text on one device. Instantly receive it across your devices.</h1>
+                <p>Private realtime text sync through your own channel.</p>
+            </div>
+
+            <div class="textarea-wrap">
+                <textarea id="shared" placeholder="Paste your text here..." maxlength="100000"></textarea>
+                <button id="clearBtn" class="textarea-action-btn clear-btn" title="Clear the textarea and the current channel">
+                    ✕
+                </button>
+
+                <button id="qrBtn" class="textarea-action-btn qr-btn" title="Generate QR code for the current text">
+                    ▣
+                </button>
+            </div>
+
+            <div class="footer-bar">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Connected to: <span id="currentChannel">--</span>
+                </div>
+                <div>Fingerprint: <span id="fingerprint">--</span></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span>Developed by egzola</span>
+        <span class="footer-sep">·</span>
+        <button id="donateBtn" class="donate-btn">⚡ Tip with Lightning</button>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
