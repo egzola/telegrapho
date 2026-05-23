@@ -66,7 +66,7 @@ However:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/telegrapho.git
+git clone https://github.com/egzola/telegrapho.git
 cd telegrapho
 ```
 
