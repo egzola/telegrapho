@@ -8,6 +8,10 @@ No accounts. No cloud dependency. No third-party clipboard services.
 
 **Your text. Your server. Your control.**
 
+
+<img width="1790" height="1402" alt="telegrapho" src="https://github.com/user-attachments/assets/563c2dbe-1964-40a0-8aca-647cb400d68d" />
+
+
 ---
 
 ## What is Telegrapho?
