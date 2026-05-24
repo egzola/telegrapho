@@ -381,14 +381,19 @@ footer {
     transform: scale(0.96);
 }
 
-.qr-btn {
-    top: 58px;
-}
-
 .clear-btn {
     top: 12px;
 }
 
+.qr-btn {
+    top: 60px;
+    padding-top: 3px;
+}
+
+.copy-btn {
+    top: 106px;
+    padding-top: 2px;
+}
 
 
 @media (max-width: 700px) {

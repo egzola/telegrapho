@@ -289,6 +289,18 @@ document.getElementById('clearBtn').addEventListener('click', () => {
 });
 
 
+
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+
+    const text = textarea.value;
+
+    if (!text) return;
+
+    copyText(text);
+});
+
+
 function qrModal() {
     let text = textarea.value;
     if (!text) return;
