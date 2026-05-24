@@ -400,6 +400,11 @@ textarea:read-only {
     padding-top: 2px;
 }
 
+.paste-btn {
+    top: 152px;
+    padding-top: 2px;
+}
+
 
 @media (max-width: 700px) {
     .header {
