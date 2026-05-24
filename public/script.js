@@ -70,6 +70,7 @@ function connect(channel) {
         textarea.readOnly = true;
         textarea.placeholder = 'Disconnected...';
         document.getElementById('currentChannel').textContent = '--';
+        document.getElementById('fingerprint').textContent = '--';
         console.log('Disconnected from server');
     });
 
