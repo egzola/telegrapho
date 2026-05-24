@@ -311,6 +311,48 @@ document.getElementById('copyBtn').addEventListener('click', () => {
 });
 
 
+document.getElementById('pasteBtn').addEventListener('click', async () => {
+
+    try {
+        if (!window.isSecureContext || !navigator.clipboard?.readText) {
+            Swal.fire({
+                toast: true,
+                position: "top",
+                icon: "info",
+                title: "Paste only available on HTTPS",
+                showConfirmButton: false,
+                timer: 1800
+            });
+            return;
+        }
+
+        const text = await navigator.clipboard.readText();
+
+        if (!text) return;
+
+        textarea.value = text;
+        updateFingerprint(text);
+
+        clearTimeout(sendTimer);
+
+        if (socket?.connected) {
+            socket.emit('edit', text);
+        }
+
+    } catch (err) {
+        Swal.fire({
+            toast: true,
+            position: "top",
+            icon: "error",
+            title: "Failed to access clipboard",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+
+});
+
+
 function qrModal() {
     let text = textarea.value;
     if (!text) return;
