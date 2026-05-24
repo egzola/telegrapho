@@ -64,11 +64,16 @@ function connect(channel) {
         textarea.readOnly = false;
         textarea.placeholder = 'Write or paste text here...';
         document.getElementById('currentChannel').textContent = channel;
+        document.getElementById('statusConnection').style.color = '';
+        document.getElementById('statusDot').style.backgroundColor = '';
     });
 
     socket.on('disconnect', () => {
         textarea.readOnly = true;
         textarea.placeholder = 'Disconnected...';
+        textarea.value = '';
+        document.getElementById('statusConnection').style.color = '#888';
+        document.getElementById('statusDot').style.backgroundColor = '#888';
         document.getElementById('currentChannel').textContent = '--';
         document.getElementById('fingerprint').textContent = '--';
         console.log('Disconnected from server');
