@@ -328,7 +328,12 @@ footer {
 }
 
 
+textarea:read-only {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #454545;
 
+}
 
 .textarea-wrap {
     position: relative;
