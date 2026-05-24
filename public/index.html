@@ -53,16 +53,51 @@
 
             <div class="textarea-wrap">
                 <textarea id="shared" maxlength="100000" placeholder="Disconnected..." readonly></textarea>
-                <button id="clearBtn" class="textarea-action-btn clear-btn" title="Clear the textarea and the current channel">
+                <button id="clearBtn" class="textarea-action-btn clear-btn"
+                    title="Clear the textarea and the current channel">
                     ✕
                 </button>
 
                 <button id="qrBtn" class="textarea-action-btn qr-btn" title="Generate QR code for the current text">
-                    <img src="qr.png" alt="QR Code Icon" class="qr-icon"  style="width: 16px; height: 16px;" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                        fill="currentColor">
+
+                        <rect x="1" y="1" width="5" height="5" rx="1" />
+                        <rect x="2.5" y="2.5" width="2" height="2" fill="#0f1115" />
+
+                        <rect x="10" y="1" width="5" height="5" rx="1" />
+                        <rect x="11.5" y="2.5" width="2" height="2" fill="#0f1115" />
+
+                        <rect x="1" y="10" width="5" height="5" rx="1" />
+                        <rect x="2.5" y="11.5" width="2" height="2" fill="#0f1115" />
+
+                        <rect x="10" y="10" width="1.5" height="1.5" />
+                        <rect x="12" y="10" width="1.5" height="1.5" />
+                        <rect x="10" y="12" width="1.5" height="1.5" />
+                        <rect x="13.5" y="12" width="1.5" height="1.5" />
+                        <rect x="12" y="13.5" width="1.5" height="1.5" />
+
+                    </svg>
                 </button>
 
                 <button id="copyBtn" class="textarea-action-btn copy-btn" title="Copy the current text">
                     ⧉
+                </button>
+
+                <button id="pasteBtn" class="textarea-action-btn paste-btn"
+                    title="Paste text into the textarea from clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <path d="M8 4h8" />
+                        <path d="M9 2h6v4H9z" />
+
+                        <rect x="5" y="4" width="14" height="18" rx="2" />
+
+                        <path d="M9 12h6" />
+                        <path d="M9 16h4" />
+
+                    </svg>
                 </button>
 
             </div>
