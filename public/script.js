@@ -61,7 +61,16 @@ function connect(channel) {
 
     socket.on('connect', () => {
         console.log(`Connected to channel: ${channel}`);
+        textarea.readOnly = false;
+        textarea.placeholder = 'Write or paste text here...';
         document.getElementById('currentChannel').textContent = channel;
+    });
+
+    socket.on('disconnect', () => {
+        textarea.readOnly = true;
+        textarea.placeholder = 'Disconnected...';
+        document.getElementById('currentChannel').textContent = '--';
+        console.log('Disconnected from server');
     });
 
     socket.on('sync', (text) => {
