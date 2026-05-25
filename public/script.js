@@ -59,6 +59,7 @@ function connect(channel) {
     });
 
 
+
     socket.on('connect', () => {
         console.log(`Connected to channel: ${channel}`);
         textarea.readOnly = false;
@@ -70,8 +71,33 @@ function connect(channel) {
 
     socket.on('disconnect', () => {
         textarea.readOnly = true;
-        textarea.placeholder = 'Disconnected...';
+        textarea.placeholder = 'Disconnected. Trying to reconnect.';
         textarea.value = '';
+
+        let timerInterval;
+        Swal.fire({
+            title: "Disconnected",
+            html: "Trying to reconnect... #<b>0</b>",
+            timer: 15000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                let attempts = 1;
+                timerInterval = setInterval(() => {
+                    timer.textContent = attempts;
+                    if (socket.connected) Swal.close();
+                    attempts++;
+                }, 1000);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) console.log("I was closed by the timer");
+        });
+
         document.getElementById('statusConnection').style.color = '#888';
         document.getElementById('statusDot').style.backgroundColor = '#888';
         document.getElementById('currentChannel').textContent = '--';
