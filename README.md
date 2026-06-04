@@ -4,7 +4,7 @@
 
 Write or paste text on one device. Instantly receive it across your devices.
 
-No accounts. No cloud dependency. No third-party clipboard services.
+No accounts. No cloud dependency. No third-party clipboard providers.
 
 **Your text. Your server. Your control.**
 
@@ -46,7 +46,7 @@ Useful for:
 - 💾 No database required
 - 🪶 Lightweight and fast
 - 📷 QR code generation
-- ⚡ Lightning donation support
+- ⚡ Lightning donation
 
 ---
 
@@ -143,3 +143,5 @@ MIT
 ## Author
 
 Developed by egzola.
+
+GitHub: https://github.com/egzola
