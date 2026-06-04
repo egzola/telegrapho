@@ -7,7 +7,7 @@ services:
       APP_PORT: 3712
 
   app:
-    image: ghcr.io/egzola/telegrapho:1.0.0@sha256:b79372523fd1a3e37c8161ab51490f94b637783993907f79b38f40ef53691f9c
+    image: ghcr.io/egzola/telegrapho:1.0.0@sha256:b1555c2e1250aeea8223c4a13ba79e4818d10ce828db9d9908345dfbe340c8f4
     restart: on-failure
     stop_grace_period: 1m
     environment:
