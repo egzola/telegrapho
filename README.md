@@ -8,16 +8,15 @@ No accounts. No cloud dependency. No third-party clipboard services.
 
 **Your text. Your server. Your control.**
 
-## How it works
-
-<img width="1453" height="714" alt="telegrapho_screen" src="https://github.com/user-attachments/assets/c5dbdaae-9791-42d7-8c25-976c063e5d89" />
-
-
-
 
 ## Screenshot
 
-<img width="1951" height="1229" alt="telegrapho2" src="https://github.com/user-attachments/assets/c1ca310f-bd8b-4269-a6d1-aa0854682df4" />
+<img width="1185" height="768" alt="screen1" src="https://github.com/user-attachments/assets/27b8f7cb-08df-4ed5-8ff3-6b015d7d997d" />
+
+
+## How it works
+
+<img width="1453" height="663" alt="screen2" src="https://github.com/user-attachments/assets/3c351b67-eeb5-41e3-a7b2-a35399e7a576" />
 
 
 
