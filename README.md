@@ -11,7 +11,7 @@ No accounts. No cloud dependency. No third-party clipboard providers.
 
 ## Screenshot
 
-<img width="1185" height="768" alt="screen1" src="https://github.com/user-attachments/assets/27b8f7cb-08df-4ed5-8ff3-6b015d7d997d" />
+<img width="1185" height="768" alt="screen1" src="https://github.com/user-attachments/assets/2c1cb7c3-9ba2-4994-a978-1576468d2d63" />
 
 
 ## How it works
