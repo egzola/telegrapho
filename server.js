@@ -8,6 +8,10 @@ const io = new Server(server);
 
 app.use(express.static('public'));
 
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 const channels = {};
 
 const defaultChannel = 'my-channel';
