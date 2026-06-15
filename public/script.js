@@ -391,13 +391,17 @@ function qrModal() {
     text = text.slice(0, 1000);
 
     const wrapper = document.createElement('div');
-    wrapper.style.marginTop = '10px';
+    wrapper.style.marginTop = '20px';
+    wrapper.style.textAlign = 'center';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'center';
 
-    const img = document.createElement('img');
-    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(text)}`;
-    img.style.margin = '10px auto';
-    img.style.display = 'block';
-    img.style.borderRadius = '12px';
+    const divQR = document.createElement('div');
+    divQR.style.margin = '10px auto';
+    divQR.style.display = 'block';
+    divQR.style.borderRadius = '12px';
 
     const preview = document.createElement('div');
     preview.style.marginTop = '12px';
@@ -407,11 +411,12 @@ function qrModal() {
     preview.style.color = '#aaa';
     preview.textContent = text.length > 128 ? text.slice(0, 128) + '...' : text;
 
-    wrapper.appendChild(img);
+    wrapper.appendChild(divQR);
     wrapper.appendChild(preview);
 
+    new QRCode(divQR, text);
+
     Swal.fire({
-        title: 'QR Code',
         html: wrapper,
         confirmButtonText: 'Copy text',
         confirmButtonColor: '#2563eb',
