@@ -12,3 +12,6 @@ services:
     stop_grace_period: 1m
     environment:
       PORT: 3712
+      DATA_DIR: /data
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
