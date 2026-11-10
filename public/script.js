@@ -141,8 +141,11 @@ connect(currentChannel);
 channelInput.addEventListener('input', () => {
     clearTimeout(changeTimer);
     changeTimer = setTimeout(() => {
-        if (channelInput.value !== currentChannel) {
-            applyChannel(channelInput.value);
+        const enteredChannel = sanitizeChannel(channelInput.value);
+        // Let the field remain empty while the user is editing it.
+        // Only switch channels once there is a valid, non-empty value.
+        if (enteredChannel && enteredChannel !== currentChannel) {
+            applyChannel(enteredChannel);
         }
     }, 400);
 });
