@@ -141,8 +141,11 @@ connect(currentChannel);
 channelInput.addEventListener('input', () => {
     clearTimeout(changeTimer);
     changeTimer = setTimeout(() => {
-        if (channelInput.value !== currentChannel) {
-            applyChannel(channelInput.value);
+        const enteredChannel = sanitizeChannel(channelInput.value);
+        // Let the field remain empty while the user is editing it.
+        // Only switch channels once there is a valid, non-empty value.
+        if (enteredChannel && enteredChannel !== currentChannel) {
+            applyChannel(enteredChannel);
         }
     }, 400);
 });
@@ -248,28 +251,35 @@ window.addEventListener('load', () => {
     document.getElementById("donateBtn").addEventListener("click", donateModal);
     document.getElementById("qrBtn").addEventListener("click", qrModal);
 
-    // show modal on first visit, explaining the porpose of the app
-    if (localStorage.getItem('telegrapho.visited') !== 'true') {
-        localStorage.setItem('telegrapho.visited', 'true');
-        setTimeout(() => {
-            Swal.fire({
-                title: "Welcome to Telegrapho 👋",
-                html: `<h1>Stop pasting sensitive text into third-party apps.</h1>
+    // Ask the server whether this is the first open across the whole Umbrel installation.
+    // The server atomically records the first claim in persistent app data.
+    fetch('/api/welcome/claim', { method: 'POST', headers: { 'Accept': 'application/json' } })
+        .then((response) => {
+            if (!response.ok) throw new Error(`Welcome status request failed: ${response.status}`);
+            return response.json();
+        })
+        .then(({ showWelcome }) => {
+            if (!showWelcome) return;
+            setTimeout(() => {
+                Swal.fire({
+                    title: "Welcome to Telegrapho 👋",
+                    html: `<h1>Stop pasting sensitive text into third-party apps.</h1>
 
-                <p>
-                    Telegrapho creates a private realtime channel between your own devices using your self-hosted
-                    server.
-                </p>
+                    <p>
+                        Telegrapho creates a private realtime channel between your own devices using your self-hosted
+                        server.
+                    </p>
 
-                <p style="margin-top:12px;">
-                    Copy on mobile. Receive on desktop instantly.<br>
-                    Your text. Your server. Your control.
-                </p>`,
-                confirmButtonText: "Got it!",
-                confirmButtonColor: '#2563eb',
-            });
-        }, 800);
-    }
+                    <p style="margin-top:12px;">
+                        Copy on mobile. Receive on desktop instantly.<br>
+                        Your text. Your server. Your control.
+                    </p>`,
+                    confirmButtonText: "Got it!",
+                    confirmButtonColor: '#2563eb',
+                });
+            }, 800);
+        })
+        .catch((error) => console.error('Could not check installation welcome status:', error));
 
     textarea.focus()
 
